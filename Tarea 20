@@ -1,0 +1,56 @@
+
+var canvas, fondo;
+var tom
+var jerry
+var together; tom1, tom2, tom3, tom4;
+var together; jerry1, jerry2, jerry3, jerry4;
+var tom1Image, tom2Image, tom3Image, tom4Image;
+var jerry1Image, jerry2Image, jerry3Image, jerry4Image;
+
+
+function preload() {
+    
+    tom1Image = loadImage("tomOne.png");
+    tom2Image = loadImage("tomTwo.png");
+    tom3Image = loadImage("tomThree.png");
+    tom4Image = loadImage("tomFour.png");
+
+    jerry1Image = loadImage("jerryOne.png");
+    jerry2Image = loadImage("jerryTwo.png");
+    jerry3Image = loadImage("jerryThree.png");
+    jerry4Image = loadImage("jerryFour.png");
+}
+
+function setup(){
+    
+    createCanvas(1000,800);
+
+    tom = createSprite(870,600);
+    tom.addAnimation("gatoSentado,tomTwo");
+    tom.scale = 0.2;
+   
+    jerry = createSprite(870,600);
+    jerry.addAnimation("ratonFeliz,jerryTwo");
+    jerry.scale = 0.2;
+    
+}
+
+function draw() {
+
+    background(fondo);
+
+    if(tom.x - jerry.x < tom.width/2+jerry.width/2
+        && tom.x - jerry.x < tom.width/2 + jerry.width/2 
+        && tom.y - jerry.y < tom.width/2 + jerry.width/2
+        && tom.y - jerry.y < tom.widht/2 + jerry.width/2 ){
+    
+    drawSprites();
+}
+
+function keyPressed(){
+    
+    if(keyCode === LEFT_ARROW);
+    Mouse.addAnimation("ratonMolestando", mouseimg3);
+    mouse.changeAnimation("ratonMolestando");
+    mouse.frameDelay = 25;
+}
